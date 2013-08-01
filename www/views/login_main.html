@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" type="text/css" href="../css/bootstrap.css" />
+		<link rel="stylesheet" type="text/css" href="../css/bootstrapSwitch.css" />
+		<link rel="stylesheet" type="text/css" href="../css/bootstrap-responsive.css" />
+		<link rel="stylesheet" type="text/css" href="../css/login_main.css" />
+		<link rel="stylesheet" type="text/css" href="../css/showLoading.css" />	
+	</head>
+	<body>
+		<div id="nav_container">
+			<div id="nav_top_bar">
+				<div id="nav_site_header" style="background-image:url('../img/titleBG.png');height:40px;">
+					<div id="btn" align="center">
+						<img class="pull-left" src="../img/backBtn.png" style="height:40px" onclick="javascript:history.go(-1)"/>
+						<img id="imgLogout" class="pull-right" src="../img/logout.png" onclick="logout()" style="height:40px"/>
+						<!--<span style="color:white;font-size:18px;font-family :微软雅黑;line-height:40px;" id="title"></span>-->
+						<span style="position:absolute;color:white;font-size:18px;font-family :微软雅黑;line-height:40px;" id="title"></span>
+					</div>
+				</div>
+			</div> <!-- end of top bar -->
+		</div>
+		<!-- 登陆部分  -->
+		<div id="login">		
+			<center>
+				<div >
+					<div >
+						<br/>
+						<ul>
+							<li style="list-style-type: none;">用户名</li>
+							<li style="list-style-type: none;"><input type="text" name="username" id="username"/></li>
+						</ul>
+						<ul>
+							<li style="list-style-type: none;">密码</li>
+							<li style="list-style-type: none;"><input type="password" name="password" id="password"></li>
+						</ul>
+						<ul>
+							<li style="list-style-type: none;"><input type="submit" value="登录" onClick="login()"/></li>
+						</ul>
+					</div>
+					<div></div>
+				</div>
+			</center>
+		
+		</div>
+		
+		<!-- 平台部分 -->
+		<div id="main">
+			<center> 
+					<table width = "300px" height = "300px" border = "0px">  
+						<tr>
+							<td style="text-align: center;">
+								<!-- <input type = "submit" value = "班车预定" style="height:80px;width:80px;margin-left:10px;background-color:#6B8E23;"/> -->
+								<div><img src="../img/banche.png" style="height:80px;width:80px;" onClick="gotoBusList()"  /></div>
+								<div>班车预定</div>
+							</td>
+							<td style="text-align: center;">
+								<div><img src="../img/yikatong.png" style="height:80px;width:80px;" onClick="showAlert()" /></div>
+								<div>一卡通</div>
+							</td>
+							<td style="text-align: center;">
+								<div><img src="../img/gongzi.png" style="height:80px;width:80px;" onClick="gotoSalary()"/></div>
+								<div>工资查询</div>
+							</td>
+						</tr>  
+						<tr style="margin-top: 20px">
+							<td style="text-align: center;">
+								<div><img src="../img/oa.png" style="height:80px;width:80px;" onClick="gotoOAList()" /></div>
+								<div>移动OA</div>
+							</td>
+							<td style="text-align: center;">
+								<div><img src="../img/jiaoxue.png" style="height:80px;width:80px;" onClick="showAlert()"/></div>
+								<div>教学评价</div>
+							</td>
+							<td style="text-align: center;"> 
+								<div><img src="../img/huiyi.png" style="height:80px;width:80px;" onClick="gotoMeetingQuery()"/></div>
+								<div>会议查询</div>
+							</td>
+						</tr>
+						<tr style="margin-top: 20px">
+							<td style="text-align: center;">
+								<div><img src="../img/kaoshi.png" style="height:80px;width:80px;" onClick="showAlert()"/></div>
+								<div>考试报名</div>
+							</td>
+							<!--<td>
+								<input type = "submit" value = "login" style="height:80px;width:80px;margin-left:10px;background-color:#99FFFF;"/>
+							</td>
+							<td>
+								<input type = "submit" value = "login" style="height:80px;width:80px;margin-left:10px;background-color:#99FFFF;"/>
+							</td>-->
+						</tr>					
+					</table>
+			</center>
+		</div>
+		
+		<script type="text/javascript" src="../js/iscroll.js"></script>
+		<script type="text/javascript" src="../js/jquery-1.9.1.js"></script>
+		<script type="text/javascript" src="../cordova.js"></script>
+		<script type="text/javascript" src="../js/knockout-2.2.0.js"></script>
+		<script type="text/javascript" src="../js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="../js/bootstrapSwitch.js"></script>
+		<script type="text/javascript" src="../viewsmodel/login_main.js"></script>
+		<script type="text/javascript" src="../js/jquery.showLoading.min.js"></script>
+	</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" type="text/css" href="../css/bootstrap.css" />
+		<link rel="styleslheet" type="text/css" href="../css/bootstrapSwitch.css" />
+		<link rel="stylesheet" type="text/css" href="../css/bootstrap-responsive.css" />
+		<link rel="stylesheet" type="text/css" href="../css/meeting_query.css" />
+		<link rel="stylesheet" type="text/css" href="../css/showLoading.css" />
+	</head>
+
+	<body>
+		<div id="nav_container">
+			<div id="nav_top_bar">
+				<div id="nav_site_header" style="background-image:url('../img/titleBG.png');height:40px;">
+					<div id="btn" align="center">
+						<img class="pull-left" src="../img/backBtn.png" style="height:40px" onclick="javascript:history.go(-1)" />
+						<!--<span style="color:white;font-size:18px;font-family :微软雅黑;line-height:40px;">会议查询</span>-->
+						<span style="position:absolute;color:white;font-size:18px;font-family:微软雅黑;line-height:40px;text-align:center" id="meeting">会议查询</span>
+					</div>
+				</div>
+			</div>
+			<!-- end of top bar -->
+		</div>
+		<div id="main" align="center">
+			<div align="center">
+				<span style="color:#000;font-size:18px;font-family:微软雅黑;line-height:40px;" id="content_title" data-bind="text:title"></span>
+			</div>
+
+			<div data-bind="foreach: datas" align="center" id="contentList">
+				<table class="footcollapse" style="margin-top:7px;">
+					<thead style="background-image:url(../img/up_02.png)" onclick="foldAndUnfold(this)">
+						<tr>
+							<th colspan="2">
+								<span data-bind="text:data().ContentForShort"></span>
+								<span style="float:right;margin-right:20px;" data-bind="text:data().timeForShort"></span>
+							</th>
+						</tr>
+					</thead>
+					<tbody style="width:290px;margin-left:5px;">
+						<tr style="background:#FFFFFF;">
+							<td width="88px">
+								<span style="margin-left:10px;">会议名称 ：</span>
+							</td>
+							<td>
+								<span data-bind="text:data().Content"></span>
+							</td>
+						</tr>
+						<tr style="background:#E0F1F3;">
+							<td>
+								<span style="margin-left:10px;">会议时间 ：</span>
+							</td>
+							<td>
+								<span data-bind="text:data().fullTime"></span>
+							</td>
+						</tr>
+						<tr style="background:#FFFFFF;">
+							<td>
+								<span style="margin-left:10px;">会议地点 ：</span>
+							</td>
+							<td>
+								<span data-bind="text:data().MeetPlace"></span>
+							</td>
+						</tr>
+						<tr style="background:#E0F1F3;">
+							<td>
+								<span style="margin-left:10px;">主办部门 ：</span>
+							</td>
+							<td>
+								<span data-bind="text:data().Department"></span>
+							</td>
+						</tr>
+						<tr style="background:#FFFFFF;">
+							<td>
+								<span style="margin-left:10px;">主管领导 ：</span>
+							</td>
+							<td>
+								<span data-bind="text:data().Master"></span>
+							</td>
+						</tr>
+						<tr style="background:#E0F1F3;">
+							<td>
+								<span style="margin-left:10px;">出席人员 ：</span>
+							</td>
+							<td>
+								<span data-bind="text:data().People"></span>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+
+		<script type="text/javascript" src="../js/iscroll.js"></script>
+		<script type="text/javascript" src="../js/jquery-1.9.1.js"></script>
+		<script type="text/javascript" src="../cordova.js"></script>
+		<script type="text/javascript" src="../js/knockout-2.2.0.js"></script>
+		<script type="text/javascript" src="../js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="../js/bootstrapSwitch.js"></script>
+		<script type="text/javascript" src="../viewsmodel/meeting_query.js"></script>
+		<script type="text/javascript" src="../js/jquery.showLoading.min.js"></script>
+	</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" type="text/css" href="../css/bootstrap.css" />
+		<link rel="stylesheet" type="text/css" href="../css/bootstrapSwitch.css" />
+		<link rel="stylesheet" type="text/css" href="../css/bootstrap-responsive.css" />
+		<link rel="stylesheet" type="text/css" href="../css/oa_release_documentation.css" />
+	</head>
+
+	<body>
+		<div id="dialog" style="width:100%;height:100%;position:absolute;background-image:url('../img/transparent_bg.png');z-index:9988;visibility:hidden;">
+			<div id="dialog_content" style="position:absolute;">
+				<div style="width:300px;position:relative;">
+					<img src="../img/re_title.png" style="width:300px"/>
+					<div style="height:200px;background:#dcdfe4;" align="center">
+						<textarea style="width:250px;height:100px;margin-top:15px;margin-bottom:10px;padding:10px;color:#8e8e8e;font-family:微软雅黑;">同意</textarea>
+						<div style="padding-bottom:10px">
+							<img src="../img/re_btn_cancel.png" style="width:130px;height:40px;margin-right:4px" onclick="closeSuggestionDialog()"/>
+							<img src="../img/re_btn_confirm.png" style="width:130px;height:40px;margin-left:4px" onclick="closeSuggestionDialog()"/>
+						</div>
+					</div>
+				</div>
+				<div>
+					<span style="position:absolute;left:113px;top:10px;color:white;font-size:18px;font-family:微软雅黑;letter-spacing:2px;">审批意见</span>
+					<span style="position:absolute;left:58px;top:200px;color:white;font-size:18px;font-family:微软雅黑;letter-spacing:2px;" onclick="closeSuggestionDialog()">取消</span>
+					<span style="position:absolute;left:203px;top:200px;color:white;font-size:18px;font-family:微软雅黑;letter-spacing:2px;" onclick="closeSuggestionDialog()">确认</span>
+				</div>
+			</div>
+		</div>
+		<div id="nav_container">
+			<div id="nav_top_bar">
+				<div id="nav_site_header" style="background-image:url('../img/titleBG.png');height:40px;">
+					<div id="btn" align="center">
+						<img class="pull-left" src="../img/backBtn.png" style="height:40px" onclick="javascript:history.go(-1)" />
+						<img id="imgReply" class="pull-right" src="../img/reply.png" onclick="showSuggestionDialog()" style="height:40px"/>
+						<span style="position:absolute;color:white;font-size:18px;font-family :微软雅黑;line-height:40px;" id="release">发文</span>
+					</div>
+				</div>
+			</div>
+			<!-- end of top bar -->
+		</div>
+
+		<div id="content">
+			<div id="title">
+				<div id="title_text">
+					<div>
+						<strong>关于调整就业指导委员会组成人员的通知及补充说明</strong>
+					</div>
+				</div>
+				<div id="subheading">
+					<div>
+						<span style="float:left;">文号：沪水大办[2005]16号</span>
+						<span style="float:right;">2013-6-15</span>
+					</div>
+					<br />
+					<span>研究生部部门工作人员</span>
+				</div>
+			</div>
+			<div id="main">
+				<p>
+					6月14日上午，校综合治理委员会副主任封金章副校长带领综治办（保卫处）、后勤管理处、后勤服务中心、基建处、设备处、水大资产经营公司、紫泰物业公司等单位负责人对学校防汛防台和安全生产工作开展全面检查，同时由后勤管理处杨韵副处长带领相关物业专业人员对校外象山基地、滨海基地等进行了检查。
+					在召集会上后勤管理处处长俞渊传达了沪教委后（2013）3号文件《关于做好2013年本市教育系统安全生产工作的通知》和沪教委后（2013）6号文件《关于做好2013年本市教育系统防汛防台工作的通知》的要求及我校已开展的相关准备工作，随即在滂沱大雨中检查组先后实地检查了共享区后勤用房基建工程、风雨操场基础工程井点降水施工、学生公寓A区第9小区维修应急值班室、第二餐厅二楼经营项目动迁准备情况、公共实验楼防汛物资仓库、生命学院大楼地下室集水井防汛水泵设施、第三餐厅一楼输配电高压一号开关站等场所，又到即将恢复开放的游泳池现场查验询问了相关准备情况。
+				</p>
+			</div>
+		</div>
+
+		<script type="text/javascript" src="../js/iscroll.js"></script>
+		<script type="text/javascript" src="../js/jquery-1.9.1.js"></script>
+		<!-- <script type="text/javascript" src="../cordova.js"></script> -->
+		<script type="text/javascript" src="../js/knockout-2.2.0.js"></script>
+		<script type="text/javascript" src="../js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="../js/bootstrapSwitch.js"></script>
+		<script type="text/javascript" src="../viewsmodel/oa_release_documentation.js"></script>
+		<script type="text/javascript" src="../js/jquery.showLoading.min.js"></script>
+	</body>
+</html>

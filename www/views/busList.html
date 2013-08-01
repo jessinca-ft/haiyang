@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" type="text/css" href="../css/bootstrap.css" />
+		<link rel="stylesheet" type="text/css" href="../css/bootstrapSwitch.css" />
+		<link rel="stylesheet" type="text/css" href="../css/bootstrap-responsive.css" />
+		<link rel="stylesheet" type="text/css" href="../css/bus.css" /> 
+		<link rel="stylesheet" type="text/css" href="../css/showLoading.css" />
+		<link href="../css/mobiscroll.core-2.6.2.css" rel="stylesheet" type="text/css" />
+		<link href="../css/mobiscroll.android-ics-2.6.2.css" rel="stylesheet" type="text/css" />
+		<link href="../css/mobiscroll.ios-2.6.2.css" rel="stylesheet" type="text/css" />
+		<link href="../css/mobiscroll.core-2.6.2.css" rel="stylesheet" type="text/css" />
+		<link href="../css/mobiscroll.custom-2.6.2.min.css" rel="stylesheet" type="text/css" />
+	</head>
+	<body>
+		<div id="nav_container">
+			<div id="nav_top_bar">
+				<div id="nav_site_header" style="background-image:url('../img/titleBG.png');height:40px;">
+					<div id="btn" align="center">
+						<img class="pull-left" src="../img/backBtn.png" style="height:40px" onclick="javascript:history.go(-1)" />
+						<!--<span style="color:white;font-size:18px;font-family :微软雅黑;line-height:40px;">会议查询</span>-->
+						<span style="position:absolute;color:white;font-size:18px;font-family:微软雅黑;line-height:40px;text-align:center" id="meeting">班车预定</span>
+					</div>
+				</div>
+			</div>
+			<div id="nav_menu">
+				<ul align="center">
+					<li style="width:100px;"><a href="#" class="current" data-bind="click:contentTAB">班车信息</a></li>
+					<li><a href="#" data-bind="click:busReserveTAB">班车预定</a></li>
+					<li><a href="#" data-bind="click:myBusReserveTAB">我的预定</a></li>
+				</ul>    	
+			</div>
+			<!-- end of top bar -->
+		</div>
+
+		<div align="center" id="contentList">
+			<table class="footcollapse" style="margin-top:10px;" data-bind="foreach: datas">
+				<tr>
+					<th colspan="2">
+						<span data-bind="text:data().TrLineCode" style="color:#016AC3;"></span>
+					</th>
+				</tr>
+				<tr style="background:#ddd;">
+					<td width="88px">
+						<span>上行路线 ：</span>
+					</td>
+					<td>
+						<span data-bind="text:data().TrUpDesc"></span>
+					</td>
+				</tr>
+				<tr style="background:#ddd;">
+					<td>
+						<span>下行路线 ：</span>
+					</td>
+					<td>
+						<span data-bind="text:data().TrDownDesc"></span>
+					</td>
+				</tr>
+				<tr style="height:20px;">
+				</tr>
+			</table>
+		</div>
+		<div align="center" id="busReserveList" style="display:none;">
+			<table class="footcollapse" style="margin-top:10px;">
+				<thead>
+					<tr>
+						<th style="color:#424242;width:100px;" colspan="2">
+						<span style="float:left;">预定日期&nbsp; &nbsp;</span>
+						<div id="demo_default" class="demos">
+						<input value="2013/05" type="button" name="test_default" id="test_default" style="width:200px;height:30px;color:#016AC3;background-image: url(../img/selectbtn.png);"/>
+						</div>
+						</th>
+					</tr>
+				</thead>
+			</table>
+			<table class="footcollapse" style="margin-top:10px;">
+				<thead>
+					<tr>
+						<th style="color:#424242;" colspan="3"><span>班车线路&nbsp; &nbsp;</span><input value="1号线" type="button" id="trNumber" style="width:200px;height:30px;color:#016AC3;background-image: url(../img/selectbtn.png);"/></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td style="width:80px;background:#ddd"></td>
+						<td style="width:185px;background:#FFFFFF;">
+							<dl class="list_dl">
+								<ul>
+									<li><a style="margin-left:10px;">1号线</a></li>
+								</ul>
+							</dl>
+						</td>
+						<td style="width:20px;background:#ddd"></td>
+					</tr>
+					<tr>
+						<td style="width:80px;background:#ddd"></td>
+						<td style="width:185px;background:#E0F1F3;">
+							<dl class="list_dl">
+								<ul>
+									<li><a style="margin-left:10px;">2号线</a></li>
+								</ul>
+							</dl>
+						</td>
+						<td style="width:20px;background:#ddd"></td>
+					</tr>
+				</tbody>
+			</table>
+			<table class="footcollapse" style="margin-top:10px;">
+				<thead>
+					<tr>
+						<th style="color:#424242;" colspan="3"><span>线路类型&nbsp; &nbsp;</span><input value="上行" type="button" id="trType" style="width:200px;height:30px;color:#016AC3;background-image: url(../img/selectbtn.png);"/></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td style="width:80px;background:#ddd"></td>
+						<td style="width:185px;background:#FFFFFF;">
+							<dl class="list_dl">
+								<ul>
+									<li><a style="margin-left:10px;">上行</a></li>
+								</ul>
+							</dl>
+						</td>
+						<td style="width:20px;background:#ddd"></td>
+					</tr>
+					<tr>
+						<td style="width:80px;background:#ddd"></td>
+						<td style="width:185px;background:#E0F1F3;">
+							<dl class="list_dl">
+								<ul>
+									<li><a style="margin-left:10px;">下行</a></li>
+								</ul>
+							</dl>
+						</td>
+						<td style="width:20px;background:#ddd"></td>
+					</tr>
+				</tbody>
+			</table>
+			<table class="footcollapse" style="margin-top:10px;">
+				<thead>
+					<tr>
+						<th style="color:#424242;width:100px;" colspan="2">
+						<span style="float:left;">发车时间&nbsp; &nbsp;</span>
+						<div id="demo_time" class="demos">
+						<input value="2013/05" type="button" name="test_time" id="test_time" style="width:200px;height:30px;color:#016AC3;background-image: url(../img/selectbtn.png);"/>
+						</div>
+						</th>
+					</tr>
+				</thead>
+			</table>
+			<table class="footcollapse" style="margin-top:10px;">
+				<thead>
+					<tr>
+						<th style="color:#424242;" colspan="3"><span>上车站点&nbsp; &nbsp;</span><input value="张江路" type="button" id="stop_up" style="width:200px;height:30px;color:#016AC3;background-image: url(../img/selectbtn.png);"/></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td style="width:80px;background:#ddd"></td>
+						<td style="width:185px;background:#FFFFFF;">
+							<dl class="list_dl">
+								<ul>
+									<li><a style="margin-left:10px;">张江路</a></li>
+								</ul>
+							</dl>
+						</td>
+						<td style="width:20px;background:#ddd"></td>
+					</tr>
+					<tr>
+						<td style="width:80px;background:#ddd"></td>
+						<td style="width:185px;background:#E0F1F3;">
+							<dl class="list_dl">
+								<ul>
+									<li><a style="margin-left:10px;">张江路</a></li>
+								</ul>
+							</dl>
+						</td>
+						<td style="width:20px;background:#ddd"></td>
+					</tr>
+				</tbody>
+			</table>
+			<table class="footcollapse" style="margin-top:10px;">
+				<thead>
+					<tr>
+						<th style="color:#424242;" colspan="3"><span>下车站点&nbsp; &nbsp;</span><input value="临港校区" type="button" id="stop_down" style="width:200px;height:30px;color:#016AC3;background-image: url(../img/selectbtn.png);"/></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td style="width:80px;background:#ddd"></td>
+						<td style="width:185px;background:#FFFFFF;">
+							<dl class="list_dl">
+								<ul>
+									<li><a style="margin-left:10px;">临港校区</a></li>
+								</ul>
+							</dl>
+						</td>
+						<td style="width:20px;background:#ddd"></td>
+					</tr>
+					<tr>
+						<td style="width:80px;background:#ddd"></td>
+						<td style="width:185px;background:#E0F1F3;">
+							<dl class="list_dl">
+								<ul>
+									<li><a style="margin-left:10px;">临港校区</a></li>
+								</ul>
+							</dl>
+						</td>
+						<td style="width:20px;background:#ddd"></td>
+					</tr>
+				</tbody>
+			</table>
+			<input value="预定" type="button" id="reserve" style="width:300px;height:40px;color:#fffff;margin-top:10px;background-image: url(../img/reserveBtn.png);color:#ffffff;"/>
+		</div>
+		<div align="center" id="myBusReserve" style="display:none;">
+			<table class="footcollapse" style="margin-top:10px;">
+				<thead style="background-image:url(../img/up_02.png);">
+					<tr>
+						<th colspan="3" style="height:45px;width:300px;"><span>2013年12月26日&nbsp; &nbsp;</span><span>16:30&nbsp; &nbsp;</span><span>1号线</span></span></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th style="width:5px;background:#ddd"></th>
+						<td style="width:300px;background:#FFFFFF;">
+							<dl class="list_dl">
+								<ul>
+									<li><span style="float:right;margin-right:20px;color:#016AC3;">张江路</span><a style="margin-left:20px;">上车站点</a></li>
+								</ul>
+							</dl>
+						</td>
+						<td style="width:5px;background:#ddd"></td>
+					</tr>
+					<tr>
+						<th style="width:5px;background:#ddd"></th>
+						<td style="width:300px;background:#E0F1F3;">
+							<dl class="list_dl">
+								<ul>
+									<li><span style="float:right;margin-right:20px;color:#016AC3;">临港校区</span><a style="margin-left:20px;">下车站点</a></li>
+								</ul>
+							</dl>
+						</td>
+						<td style="width:5px;background:#ddd"></td>
+					</tr>
+					<tr>
+						<th style="width:5px;background:#ddd"></th>
+						<td style="width:300px;background:#FFFFFF;">
+							<dl class="list_dl">
+								<ul>
+									<li><span style="float:right;margin-right:20px;color:#016AC3;">沪BS5882</span><a style="margin-left:20px;">班车车号</a></li>
+								</ul>
+							</dl>
+						</td>
+						<td style="width:5px;background:#ddd"></td>
+					</tr>
+					<tr>
+						<th style="width:5px;background:#ddd"></th>
+						<td style="width:300px;background:#E0F1F3;">
+							<dl class="list_dl">
+								<ul>
+									<li><span style="float:right;margin-right:20px;color:#016AC3;">45</span><a style="margin-left:20px;">座位号</a></li>
+								</ul>
+							</dl>
+						</td>
+						<td style="width:5px;background:#ddd"></td>
+					</tr>
+					<tr style="height:55px;">
+						<th style="width:5px;background:#ddd"></th>
+						<td style="width:300px;background:#FFFFFF;">
+							<input value="退定" type="button" id="delete" style="width:120px;height:30px;color:#fffff;float:right;margin-right:10px;margin-top:12px;background-image: url(../img/delete.png);color:#ffffff;"/>
+						</td>
+						<td style="width:5px;background:#ddd"></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+		<script type="text/javascript" src="../js/iscroll.js"></script>
+		<script type="text/javascript" src="../js/jquery-1.9.1.js"></script>
+		<script type="text/javascript" src="../cordova.js"></script>
+		<script type="text/javascript" src="../js/knockout-2.2.0.js"></script>
+		<script type="text/javascript" src="../js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="../js/bootstrapSwitch.js"></script>
+		<script type="text/javascript" src="../viewsmodel/bus.js"></script>
+		<script type="text/javascript" src="../js/jquery.showLoading.min.js"></script>
+		<script src="../js/date/mobiscroll.custom-2.6.2.min.js" type="text/javascript"></script>
+		<script src="../js/date/mobiscroll.core-2.6.2.js" type="text/javascript"></script>
+		<script src="../js/date/mobiscroll.datetime-2.6.2.js" type="text/javascript"></script>
+		<script src="../js/date/mobiscroll.android-2.6.2.js" type="text/javascript"></script>
+		<script src="../js/date/mobiscroll.android-ics-2.6.2.js" type="text/javascript"></script>
+		<script src="../js/date/mobiscroll.ios-2.6.2.js" type="text/javascript"></script>
+	</body>
+</html>

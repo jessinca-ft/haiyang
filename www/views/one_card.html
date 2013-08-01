@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" type="text/css" href="../css/bootstrap.css" />
+		<link rel="stylesheet" type="text/css" href="../css/bootstrapSwitch.css" />
+		<link rel="stylesheet" type="text/css" href="../css/bootstrap-responsive.css" />
+		<link rel="stylesheet" type="text/css" href="../css/one_card.css" />
+		<link rel="stylesheet" type="text/css" href="../css/showLoading.css" />
+	</head>
+	<body>
+		<div id="nav_container">
+			<div id="nav_top_bar">
+				<div id="nav_site_header" style="background-image:url('../img/titleBG.png');height:40px;">
+					<div id="btn" align="center">
+						<img class="pull-left" src="../img/backBtn.png" style="height:40px" onclick="javascript:history.go(-1)"/>
+						<div class="pull-right" style="height:40px;color:white">
+							<span style="">85.00</span><span>元</span>
+						</div>
+						<!--<span style="color:white;font-size:18px;font-family :微软雅黑;line-height:40px;" id="title"></span>-->
+						<span style="position:absolute;color:white;font-size:18px;font-family :微软雅黑;line-height:40px;" id="title">一卡通查询</span>
+					</div>
+				</div>
+			</div>
+			<!-- end of top bar -->
+			<div id="nav_menu">
+				<ul align="center">
+					<li style="width:100px;">
+						<a href="#" class="current" data-bind="click:newsTAB">消费记录</a>
+					</li>
+					<li>
+						<a href="#" data-bind="click:announcementTAB">充值记录</a>
+					</li>
+					<li>
+						<a href="#" data-bind="click:academicForumTAB">一卡通挂失</a>
+					</li>
+					<li>
+						<a href="#" data-bind="click:schoolIntroTAB">考勤记录</a>
+					</li>
+				</ul>
+			</div>
+			
+			
+			
+			
+			
+		</div>
+
+		<script type="text/javascript" src="../js/iscroll.js"></script>
+		<script type="text/javascript" src="../js/jquery-1.9.1.js"></script>
+		<script type="text/javascript" src="../cordova.js"></script>
+		<script type="text/javascript" src="../js/knockout-2.2.0.js"></script>
+		<script type="text/javascript" src="../js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="../js/bootstrapSwitch.js"></script>
+		<script type="text/javascript" src="../viewsmodel/one_card.js"></script>
+		<script type="text/javascript" src="../js/jquery.showLoading.min.js"></script>
+	</body>
+</html>
